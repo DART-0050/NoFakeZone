@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoFakeZone - Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}">
+    <style>
+        .result-text {
+            font-weight: 900;
+            font-size: 32px;
+        }
+        .real-user {
+            color: rgb(54, 228, 54);
+        }
+        .fake-user {
+            color: rgb(255, 37, 37);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Transparent Header -->
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/icon.png') }}" alt="NoFakeZone Logo">
+            <h1>NoFakeZone</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- Result Section -->
+    <section class="hero">
+        <h2>Prediction Result</h2>
+        
+        <div class="result-animation">
+            <img src="{{ url_for('static', filename='images/real_user.gif') if prediction == 'Real User' else url_for('static', filename='images/fake_user.gif') }}" 
+                 alt="Prediction Animation" style="width: 250px; height: 250px;">
+        </div>
+        
+        <p class="result-text {{ 'real-user' if prediction == 'Real User' else 'fake-user' }}">{{ prediction }}</p>
+        <a href="/" class="scroll-btn">Try Another Profile</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ by <span>Specters</span></p>
+    </footer>
+
+</body>
+</html>

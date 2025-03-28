@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoFakeZone - Fake Profile Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}">
+    <style>
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.2); /* Transparent */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%; /* Wider Card */
+            max-width: 1000px;
+            margin: auto;
+            backdrop-filter: blur(10px); /* Glassmorphism Effect */
+            position: relative;
+        }
+        .form-title {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+        }
+        .form-grid input, .form-grid select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            background: white; /* Fully White */
+            color: black;
+        }
+        .form-grid input::placeholder {
+            color: black;
+        }
+        .submit-btn {
+            grid-column: span 2;
+            margin-top: 15px;
+            padding: 12px;
+            font-size: 18px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Transparent Header -->
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/icon.png') }}" alt="NoFakeZone Logo">
+            <h1>NoFakeZone</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Detect Fake Profiles Before They Catfish You!</h2>
+        <p>Our AI sniffs out fakes faster than your ex stalking your socials😆</p>
+        <a href="#form-section" class="scroll-btn">Get Started</a>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form-section">
+        <h2 class="form-title">Enter Profile Details</h2>
+        <div class="form-container">
+            <form action="/" method="POST" class="form-grid">
+                <input type="number" name="fav_number" placeholder="Favorite Number" required>
+                <input type="number" name="statuses_count" placeholder="Statuses Count" required>
+                <input type="number" name="followers_count" placeholder="Followers Count" required>
+                <input type="number" name="friends_count" placeholder="Friends Count" required>
+                <input type="number" name="favourites_count" placeholder="Favourites Count" required>
+                <input type="number" name="listed_count" placeholder="Listed Count" required>
+                <select name="lang" required>
+                    <option value="" disabled selected>Language</option>
+                    <option value="1">1 - German (de)</option>
+                    <option value="2">2 - English (en)</option>
+                    <option value="3">3 - Spanish (es)</option>
+                    <option value="4">4 - French (fr)</option>
+                    <option value="5">5 - Galician (gl)</option>
+                    <option value="6">6 - Italian (it)</option>
+                    <option value="7">7 - Dutch (nl)</option>
+                    <option value="8">8 - Turkish (tr)</option>
+                </select>
+                <button type="submit" class="submit-btn">Check Profile</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ by <span>Specters</span></p>
+    </footer>
+
+</body>
+</html>

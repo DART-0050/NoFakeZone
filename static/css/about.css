@@ -1,0 +1,102 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Background */
+body {
+    background: url('../images/about_bg.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1e1e1e;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+.about-section {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 100%;
+    min-height: calc(100vh - 100px); /* Adjust height to fit screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Black with 60% transparency */
+    z-index: -1;
+}
+
+.about-section h2, 
+.about-section p, 
+.about-section h3 {
+    position: relative;
+    color: white;
+    z-index: 1;
+    padding: 15px;
+    max-width: 800px;
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    background: #1e1e1e;
+    color: white;
+    padding: 15px;
+    font-size: 1rem;
+}
